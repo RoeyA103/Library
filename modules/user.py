@@ -1,11 +1,16 @@
 from modules.book import Book
 class User:
     id = 100
-    def __init__(self,name:str,id:int):
-        self.name = name
-        self.id = User.id
-        User.id += 1
-        self.__borrowed_books = []
+    def __init__(self, name:str, id:int=None , __borrowed_books:list=None):
+        if id:
+            self.id = id
+            User.id = id +1
+        else:
+            self.id = User.id
+            User.id += 1
+
+        self.name = name    
+        self.__borrowed_books = __borrowed_books
 
     def __str__(self):
         return f"""name:{self.name}, id:{self.id},

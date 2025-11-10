@@ -1,5 +1,7 @@
 from modules.book import Book
 from modules.user import User
+
+
 class Library:
     def __init__(self):
         self.books = []
@@ -31,7 +33,7 @@ class Library:
         else:
             print("book or user not found")    
 
-    def search_book(self,book_author:str,book_title:str)-> bool:
+    def search_book(self,book_author:str=None,book_title:str=None)-> bool:
         for book in self.books:
             if book.auther == book_author or book.title == book_title:
                 return True
@@ -40,6 +42,7 @@ class Library:
 
     def add_book(self,book:Book)->None:
         if isinstance(book,Book):
+            # TODO: add to json
             self.books.append(book)
             print("The book has been successfully added")
         else:

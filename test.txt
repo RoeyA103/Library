@@ -1,0 +1,20 @@
+[
+    {
+        "title": "bla",
+        "author": "blu",
+        "_Book__is_available": true,
+        "isbn": 200
+    },
+    {
+        "title": "ddada",
+        "author": "dedede",
+        "_Book__is_available": true,
+        "isbn": 201
+    },
+    {
+        "title": "lolol",
+        "author": "lalal",
+        "_Book__is_available": true,
+        "isbn": 202
+    }
+]
