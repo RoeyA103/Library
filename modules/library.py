@@ -17,7 +17,7 @@ class Library:
         return None
     
     def find_book(self,book_id:int)-> Book | None:
-        for book in self.bookss:
+        for book in self.books:
             if book.id == book_id:
                 return book
         return None
@@ -61,7 +61,7 @@ class Library:
         else:
             print("book or user not found")     
 
-    def list_available_books(self) ->str:
+    def list_available_books(self) -> str:
         list_available = [book.title for book in self.books if book.is_available()]
         return ", ".join(list_available)
 
