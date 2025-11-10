@@ -12,7 +12,7 @@ class User:
         borrowed books:{", ".join(book.title for book in self.__borrowed_books)}"""
     
     def add_book(self,book)-> None:
-        if  isinstance(Book,book):
+        if  isinstance(book,Book):
             self.__borrowed_books.append(book)
         else:
             raise ValueError("can add only Book object")
