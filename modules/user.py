@@ -16,3 +16,9 @@ class User:
             self.__borrowed_books.append(book)
         else:
             raise ValueError("can add only Book object")
+
+    def remove_book(self,book)->None:
+        if isinstance(book,Book):
+            self.__borrowed_books.remove(book)
+        else:
+            raise ValueError("can add only Book object")
