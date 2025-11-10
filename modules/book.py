@@ -13,6 +13,8 @@ class Book:
     def set_available(self,flag:bool):
         if isinstance(flag,bool):
             self.__is_available = flag
+        else:
+            raise ValueError("can add only Boolyan object")
 
     def is_available(self):
         return self.__is_available
