@@ -9,8 +9,6 @@ b1 = Book("bla","blu")
 b2 = Book("ddada","dedede")
 b3 = Book("lolol","lalal")
 
-print(os.path('test.txt'))
-
 # books = [b1.__dict__, b2.__dict__, b3.__dict__]
 
 # with open("test.txt", "w") as file:
