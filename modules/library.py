@@ -10,7 +10,7 @@ class Library:
         users = ", ".join(user.name for user in self.users)
         return f"books: {books}\nusers: {users}"
     
-    def find_user(self, user_id: int) -> User | None:
+    def find_user(self, user_id: int) -> User |None:
         for user in self.users:
             if user.id == user_id:
                 return user
@@ -25,9 +25,8 @@ class Library:
     def borrow_book(self,user_id:int,book_id:int)-> None:
         user = self.find_user(user_id)
         book = self.find_book(book_id)
-        if user and book:
-            book.set_available(False)
-            user.add_book(book)
+        book.set_available(False)
+        user.add_book(book)
 
     def search_book(self,book_author:str,book_title:str)-> bool:
         for book in self.books:
