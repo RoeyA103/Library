@@ -1,27 +1,42 @@
 from modules.book import Book
 from modules.user import User
 from modules.library import Library
+from io.file_maneger import *
 from json import dumps , loads ,load , dump
-from types import SimpleNamespace
-import os
 
-b1 = Book("bla","blu")
-b2 = Book("ddada","dedede")
-b3 = Book("lolol","lalal")
 
-books = [b1.__dict__, b2.__dict__, b3.__dict__]
+class Maneger:
+    def __init__(self):
+        self.library = Library()
+        self.library.books = Maneger.load_books()
+        self.library.users = Maneger.load_users()
 
-with open("test.txt", "w") as file:
-    dump(books, file,indent=4)
+    @classmethod
+    def load_books():
+        books = read_books_from_file()
+        return [Book(**data) for data in books]
 
-with open("test.txt", "r") as file:
-    books1 = load(file)
-
-self.books =  [Book(**book) for book in books1]
-
-print(books1)
+    @classmethod
+    def load_users():
+        users = read_users_from_file()
+        return  [User(**data) for data in users]
+            
+    def creat_user(self)-> User:
+        user_name = input("enter user name:\n")
+        user = User(user_name)
+        return user
     
+    def creat_book(self)-> Book:
+        book_title = input("enter book title:\n")
+        book_author = input("enter book  author")
+        return Book(book_author,book_title)
     
-[print(book.isbn) for book in books1]
-print(Book.isbn)
+    def sign_user(self,user:User):
+        self.library.add_user(user)
+        write_user_to_file(user)
+
+    def sign_book(self,book:Book):
+        self.library.add_book(book)
+        write_book_to_file(book)
+
 

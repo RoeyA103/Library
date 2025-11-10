@@ -22,3 +22,5 @@ def read_users_from_file() ->list[User]:
     with open("test.json", "r") as file:
         users = load(file)
     return users
+
+
