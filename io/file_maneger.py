@@ -15,11 +15,11 @@ def read_books_from_file() ->list[Book]:
 
 
 def write_user_to_file(user:User)->None:
-    with open("database\users.json", "a") as file:
+    with open("database\\users.json", "a") as file:
         dump(user.__dict__, file, indent=4)
 
 def read_users_from_file() ->list[User]:
-    with open("database\users.json", "r") as file:
+    with open("database\\users.json", "r") as file:
         users = load(file)
     return users
 
