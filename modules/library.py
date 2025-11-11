@@ -30,6 +30,7 @@ class Library:
         if user and book:
             book.set_available(False)
             user.add_book(book)
+            print("The operation was successful.")
         else:
             print("book or user not found")
 
@@ -37,7 +38,7 @@ class Library:
     def search_book_by_author(self,book_author:str)-> None:
         books = []
         for book in self.books:
-            if book.auther == book_author:
+            if book.author == book_author:
                 books.append(book)
         [print(book) for book in books] if books else print("no book found")
     
@@ -97,8 +98,7 @@ class Library:
             print("book or user not found")
 
     def list_available_books(self) -> str:
-        list_available = [book.title for book in self.books if book.is_available()]
-        if not list_available:
-            print("No books available")
-        return ", ".join(list_available)
+        if list_available := [f"{book.title} author: {book.author}" for book in self.books if book.is_available()]:
+            return ", ".join(list_available)
+        return "There are no books in the library."
 

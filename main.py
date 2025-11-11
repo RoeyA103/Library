@@ -4,12 +4,14 @@ from modules.library import Library
 from io_utils.file_manager import *
 from io_utils.ios import *
 import library_manager
+from time import sleep
 
 
 def main():
     manager = library_manager.Manager()
 
     while True:
+        sleep(1)
         print_menu()
 
         user_choice = input()
@@ -44,11 +46,11 @@ def main():
             case '10':
                 user_id = get_id("enter user id:\n")
                 book_id = get_id("enter book id:\n")
-                manager.library.borrow_book(user_id,book_id)
+                manager.borrow_book(user_id,book_id)
             case '11':
                 user_id = get_id("enter uder id")
                 book_id = get_id("enter book id")
-                manager.library.return_book(user_id,book_id)
+                manager.return_book(user_id,book_id)
             case '0':
                 break
             case _:

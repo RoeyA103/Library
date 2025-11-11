@@ -15,7 +15,7 @@ def write_book_to_file(book:Book,path="database\\books.json")->None:
     except (FileNotFoundError, ValueError):
         data = []
 
-    data.append(book.__dict__)
+    data.append(book.to_dict())
 
     with open(path, "w") as file:
         dump(data, file, indent=4)
@@ -59,8 +59,16 @@ def write_user_to_file(user:User,path="database\\users.json")->None:
 (default path database\\users.json)
 """
 
-    with open(path, "a") as file:
-        dump(user.__dict__, file, indent=4)
+    try:
+        with open(path, "r") as file:
+            data = load(file)
+    except (FileNotFoundError, ValueError):
+        data = []
+
+    data.append(user.to_dict())
+
+    with open(path, "w") as file:
+        dump(data, file, indent=4)
 
 def read_users_from_file(path = "database\\users.json") ->list[User] | None:
     try:
@@ -70,4 +78,12 @@ def read_users_from_file(path = "database\\users.json") ->list[User] | None:
     except:
         return None
 
+def update_user_data(users:list,path="database\\users.json"):
+    data = [user.to_dict() for user in users]
+    with open(path, "w") as file:
+        dump(data, file, indent=4)
 
+def update_book_data(books:list,path="database\\books.json"):
+    data = [book.to_dict() for book in books]
+    with open(path, "w") as file:
+        dump(data, file, indent=4)
