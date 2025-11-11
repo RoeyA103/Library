@@ -12,13 +12,13 @@ class Maneger:
         self.library.users = Maneger.load_users()
 
     @classmethod
-    def load_books():
+    def load_books(cls):
         if (books := file_manager.read_books_from_file()):
             return [Book(**data) for data in books]
         return [] 
 
     @classmethod
-    def load_users():
+    def load_users(cls):
         if (users := file_manager.read_users_from_file()):
             return [User(**data) for data in users]
         return []

@@ -1,8 +1,8 @@
 from modules.book import Book
 from modules.user import User
 from modules.library import Library
-from io import file_maneger
-import library_maneger
+from io import file_manager
+import library_manager
 
 
 def validate_int_input(func):
@@ -40,7 +40,7 @@ To exit,                                press 0
           """)
 
 def main():
-    maneger = library_maneger.Maneger()
+    maneger = library_manager.Maneger()
     while True:
         print_menu()
 
@@ -57,15 +57,19 @@ def main():
                 if book := maneger.library.find_book(get_id()):
                     print(book)
             case '4':
-                
+                pass
             case '5':
                 pass
             case '6':
                 pass
             case '7':
-                pass
+                print(maneger.library.list_available_books())
             case '8':
                 pass
+            case '9':
+                user_id = get_id("enter uder id")
+                book_id = get_id("enter book id")
+                maneger.library.return_book(user_id,book_id)
             case '0':
                 break
             case _:
