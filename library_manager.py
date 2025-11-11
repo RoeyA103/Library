@@ -5,20 +5,20 @@ from io import file_manager
 from json import dumps , loads ,load , dump
 
 
-class Maneger:
+class Manager:
     def __init__(self):
         self.library = Library()
-        self.library.books = Maneger.load_books() 
-        self.library.users = Maneger.load_users()
+        self.library.books = Manager.load_books() 
+        self.library.users = Manager.load_users()
 
     @classmethod
-    def load_books():
+    def load_books(cls):
         if (books := file_manager.read_books_from_file()):
             return [Book(**data) for data in books]
         return [] 
 
     @classmethod
-    def load_users():
+    def load_users(cls):
         if (users := file_manager.read_users_from_file()):
             return [User(**data) for data in users]
         return []
