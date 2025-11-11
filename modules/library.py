@@ -69,6 +69,7 @@ class Library:
         if book and user:
             book.set_available(True)
             user.remove_book(book)
+            print("The book has been successfully returned")
         else:
             print("book or user not found")
 

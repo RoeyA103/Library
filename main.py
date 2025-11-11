@@ -7,6 +7,7 @@ import library_manager
 
 def main():
     manager = library_manager.Manager()
+
     while True:
         ios.print_menu()
 
@@ -32,13 +33,15 @@ def main():
                 if user := manager.library.find_user(user_id):
                     print(user)
             case '7':
-                pass
+                print(manager.library.list_available_books())
             case '8':
                 user_id = ios.get_id("enter user id:\n")
                 book_id = ios.get_id("enter book id:\n")
                 manager.library.borrow_book(user_id,book_id)
             case '9':
-                pass
+                user_id = ios.get_id("enter uder id")
+                book_id = ios.get_id("enter book id")
+                manager.library.return_book(user_id,book_id)
             case '0':
                 break
             case _:
