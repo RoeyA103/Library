@@ -28,15 +28,15 @@ class Manager:
     def create_user(self)-> User:
         user_name = input("enter user name:\n")
         user = User(user_name)
-        write_user_to_file(user)
+        print(user)
 
         return user
     
     def create_book(self)-> Book:
         book_title = input("enter book title:\n")
-        book_author = input("enter book  author")
+        book_author = input("enter book  author:\n")
         book = Book(book_title,book_author)
-        write_book_to_file(book)
+        print(book)
 
         return book
     

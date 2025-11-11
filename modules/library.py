@@ -74,6 +74,7 @@ class Library:
             print("book or user not found")
 
     def list_available_books(self) -> str:
-        list_available = [book.title for book in self.books if book.is_available()]
-        return ", ".join(list_available)
+        if list_available := [book.title for book in self.books if book.is_available()]:
+            return ", ".join(list_available)
+        return "There are no books in the library."
 

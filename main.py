@@ -4,12 +4,14 @@ from modules.library import Library
 from io_utils.file_manager import *
 from io_utils.ios import *
 import library_manager
+from time import sleep
 
 
 def main():
     manager = library_manager.Manager()
 
     while True:
+        sleep(1)
         print_menu()
 
         user_choice = input()

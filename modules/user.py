@@ -13,7 +13,7 @@ class User:
             User.id += 1
 
     def __str__(self):
-        return f"""name:{self.name}, id:{self.id}, borrowed books:{", ".join(book.title for book in self.__borrowed_books)}"""
+        return f"""name:{self.name}, id:{self.id}, borrowed books:{", ".join(book.title for book in self.__borrowed_books) if self.__borrowed_books else ""}"""
     
     def add_book(self,book)-> None:
         if  isinstance(book,Book):
