@@ -15,14 +15,14 @@ class Manager:
     @classmethod
     def load_books(cls):
 
-        if (books := read_books_from_file()):
+        if books := read_books_from_file():
             return [Book(**data) for data in books]
-        return [] 
+        return []
 
     @classmethod
     def load_users(cls):
 
-        if (users := read_users_from_file()):
+        if users := read_users_from_file():
             return [User(**data) for data in users]
         return []
 

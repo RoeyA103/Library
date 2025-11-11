@@ -20,7 +20,7 @@ class Library:
     
     def find_book(self,book_id:int)-> Book | None:
         for book in self.books:
-            if book.id == book_id:
+            if book.isbn == book_id:
                 return book
         return None
 

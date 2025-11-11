@@ -1,0 +1,38 @@
+[
+    {
+        "title": "book tytyty",
+        "author": "tototo",
+        "_Book__is_available": true,
+        "isbn": 200
+    },
+    {
+        "title": "book tytyty",
+        "author": "tototo",
+        "_Book__is_available": true,
+        "isbn": 200
+    },
+    {
+        "title": "wpwpwp book",
+        "author": "nvnvnvn",
+        "_Book__is_available": true,
+        "isbn": 201
+    },
+    {
+        "title": "wpwpwp book",
+        "author": "nvnvnvn",
+        "_Book__is_available": true,
+        "isbn": 201
+    },
+    {
+        "title": "book glglgl",
+        "author": "yryryry",
+        "_Book__is_available": true,
+        "isbn": 202
+    },
+    {
+        "title": "book glglgl",
+        "author": "yryryry",
+        "_Book__is_available": true,
+        "isbn": 202
+    }
+]

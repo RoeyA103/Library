@@ -9,9 +9,16 @@ def write_book_to_file(book:Book,path="database\\books.json")->None:
 (parameter extraction is done in the function itself)
 (default path database\\books.json)
 """
+    try:
+        with open(path, "r") as file:
+            data = load(file)
+    except (FileNotFoundError, ValueError):
+        data = []
 
-    with open(path, "a") as file:
-        dump(book.__dict__, file, indent=4)
+    data.append(book.__dict__)
+
+    with open(path, "w") as file:
+        dump(data, file, indent=4)
 
 
 def read_books_from_file(path="database\\books.json") ->list[Book] | None:
