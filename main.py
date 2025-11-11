@@ -21,27 +21,33 @@ def main():
                 user = manager.create_user()
                 manager.sign_user(user)
             case '2':
+                user_id = get_id("enter a user id")
+                manager.delete_user(user_id)
+            case '3':
                 book = manager.create_book()
                 manager.sign_book(book)
-            case '3':
+            case '4':
+                book_isbn = get_id("enter a book isbn")
+                manager.delete_book(book_isbn)
+            case '5':
                 book_id = get_id("enter book id:\n")
                 if book := manager.library.find_book(book_id):
                     print(book)
-            case '4':
-                manager.library.search_book_by_title(input("enter title:\n"))
-            case '5':
-                manager.library.search_book_by_author(input("enter author name:\n"))
             case '6':
+                manager.library.search_book_by_title(input("enter title:\n"))
+            case '7':
+                manager.library.search_book_by_author(input("enter author name:\n"))
+            case '8':
                 user_id = get_id("enter user id:\n")
                 if user := manager.library.find_user(user_id):
                     print(user)
-            case '7':
+            case '9':
                 print(manager.library.list_available_books())
-            case '8':
+            case '10':
                 user_id = get_id("enter user id:\n")
                 book_id = get_id("enter book id:\n")
                 manager.borrow_book(user_id,book_id)
-            case '9':
+            case '11':
                 user_id = get_id("enter uder id:\n")
                 book_id = get_id("enter book id:\n")
                 manager.return_book(user_id,book_id)

@@ -64,6 +64,29 @@ class Library:
         else:
             ValueError("did yue cen append only user of type User")
 
+    def delelt_user(self,user_id) ->None:
+        flag = False
+        for user in self.users:
+            if user.id == user_id:
+                self.users.remove(user)
+                print("User deleted successfully")
+                flag = True
+                break
+        if not flag:
+            print("the user id is not found")
+
+    def delete_book(self,book_isbn):
+        flag = False
+        for book in self.books:
+            if book.isbn == book_isbn:
+                self.books.remove(book)
+                print("Book deleted successfully")
+                flag = True
+                break
+        if not flag:
+            print("the book isbn is not found")
+
+
     def return_book(self, user_id, book_isbn) -> None:
         book = self.find_book(book_isbn)
         user = self.find_user(user_id)

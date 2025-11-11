@@ -32,8 +32,6 @@ class Manager:
             users.append(User(**data))
 
         return users
-
-
             
     def create_user(self)-> User:
         user_name = input("enter user name:\n")
@@ -49,7 +47,14 @@ class Manager:
         print(book)
 
         return book
-    
+    def delete_user(self,user_id):
+        self.library.delelt_user(user_id)
+        delete_user_from_file(user_id)
+
+    def delete_book(self,book_isbn):
+        self.library.delete_book(book_isbn)
+        delete_book_from_file(book_isbn)
+
     def sign_user(self,user:User):
         self.library.add_user(user)
         write_user_to_file(user)
