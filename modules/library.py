@@ -34,14 +34,19 @@ class Library:
             print("book or user not found")
 
 
-    def search_book_by_author(self,book_author:str=None,book_title:str=None)-> bool:
+    def search_book_by_author(self,book_author:str)-> None:
+        books = []
         for book in self.books:
-            if book.auther == book_author or book.title == book_title:
-                return True
-        return False
+            if book.auther == book_author:
+                books.append(book)
+        [print(book) for book in books] if books else print("no book found")
     
-    def search_book_by_title():
-        pass
+    def search_book_by_title(self,book_title:str)->None:
+        books = []
+        for book in self.books:
+            if book.title == book_title:
+                books.append(book)
+        [print(book) for book in books] if books else print("no book found")
 
 
     def add_book(self, book: Book) -> None:

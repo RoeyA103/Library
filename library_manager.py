@@ -1,7 +1,7 @@
 from modules.book import Book
 from modules.user import User
 from modules.library import Library
-from io.file_maneger import *
+from io import file_manager
 from json import dumps , loads ,load , dump
 
 
@@ -13,13 +13,13 @@ class Maneger:
 
     @classmethod
     def load_books():
-        if (books := read_books_from_file()):
+        if (books := file_manager.read_books_from_file()):
             return [Book(**data) for data in books]
         return [] 
 
     @classmethod
     def load_users():
-        if (users := read_users_from_file()):
+        if (users := file_manager.read_users_from_file()):
             return [User(**data) for data in users]
         return []
 
@@ -36,10 +36,10 @@ class Maneger:
     
     def sign_user(self,user:User):
         self.library.add_user(user)
-        write_user_to_file(user)
+        file_manager.write_user_to_file(user)
 
     def sign_book(self,book:Book):
         self.library.add_book(book)
-        write_book_to_file(book)
+        file_manager.write_book_to_file(book)
 
 
