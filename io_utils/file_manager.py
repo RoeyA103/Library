@@ -29,7 +29,29 @@ def read_books_from_file(path="database\\books.json") ->list[Book] | None:
     except:
         return None
 
+def delete_user_from_file(user_id,path="database\\users.json")->None:
+    with open(path, "r") as file:
+        data = load(file)
+    if data:
+        for user in data:
+            if user['id'] == user_id:
+                data.remove(user)
+                break
+        with open(path, "w") as file:
+            dump(data, file, indent=4)
 
+
+
+def delete_book_from_file(book_isbn,path="database\\books.json"):
+    with open(path, "r") as file:
+        data = load(file)
+    if data:
+        for book in data:
+            if book['isbn'] == book_isbn:
+                data.remove(book)
+                break
+        with open(path, "w") as file:
+            dump(data, file, indent=4)
 def write_user_to_file(user:User,path="database\\users.json")->None:
     """
     Saves the object in json format

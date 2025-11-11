@@ -1,38 +1,26 @@
 [
     {
-        "title": "book tytyty",
-        "author": "tototo",
+        "title": "\u05d0\u05d0\u05d0\u05d0",
+        "author": "oooooo",
         "_Book__is_available": true,
         "isbn": 200
     },
     {
-        "title": "book tytyty",
-        "author": "tototo",
+        "title": "\u05d0\u05d0\u05d0\u05d0",
+        "author": "oooooo",
         "_Book__is_available": true,
         "isbn": 200
     },
     {
-        "title": "wpwpwp book",
-        "author": "nvnvnvn",
+        "title": "ututut",
+        "author": "ououou",
         "_Book__is_available": true,
         "isbn": 201
     },
     {
-        "title": "wpwpwp book",
-        "author": "nvnvnvn",
+        "title": "ututut",
+        "author": "ououou",
         "_Book__is_available": true,
         "isbn": 201
-    },
-    {
-        "title": "book glglgl",
-        "author": "yryryry",
-        "_Book__is_available": true,
-        "isbn": 202
-    },
-    {
-        "title": "book glglgl",
-        "author": "yryryry",
-        "_Book__is_available": true,
-        "isbn": 202
     }
 ]

@@ -14,14 +14,12 @@ class Manager:
 
     @classmethod
     def load_books(cls):
-
         if books := read_books_from_file():
             return [Book(**data) for data in books]
         return []
 
     @classmethod
     def load_users(cls):
-
         if users := read_users_from_file():
             return [User(**data) for data in users]
         return []
@@ -39,9 +37,15 @@ class Manager:
         book_author = input("enter book  author")
         book = Book(book_title,book_author)
         write_book_to_file(book)
-
         return book
-    
+    def delete_user(self,user_id):
+        self.library.delelt_user(user_id)
+        delete_user_from_file(user_id)
+
+    def delete_book(self,book_isbn):
+        self.library.delete_book(book_isbn)
+        delete_book_from_file(book_isbn)
+
     def sign_user(self,user:User):
         self.library.add_user(user)
         write_user_to_file(user)
