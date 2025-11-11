@@ -8,18 +8,21 @@ from json import dumps , loads ,load , dump
 class Maneger:
     def __init__(self):
         self.library = Library()
-        self.library.books = Maneger.load_books()
+        self.library.books = Maneger.load_books() 
         self.library.users = Maneger.load_users()
 
     @classmethod
     def load_books():
-        books = read_books_from_file()
-        return [Book(**data) for data in books]
+        if (books := read_books_from_file()):
+            return [Book(**data) for data in books]
+        return [] 
 
     @classmethod
     def load_users():
-        users = read_users_from_file()
-        return  [User(**data) for data in users]
+        if (users := read_users_from_file()):
+            return [User(**data) for data in users]
+        return []
+
             
     def creat_user(self)-> User:
         user_name = input("enter user name:\n")

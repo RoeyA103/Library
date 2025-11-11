@@ -1,5 +1,5 @@
 import json
-from io.file_maneger import *
+from io import file_maneger
 class Book:
     isbn = 200
     def __init__(self, title ,author,isbn=None,__is_available=True):
