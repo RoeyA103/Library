@@ -14,15 +14,25 @@ class Manager:
 
     @classmethod
     def load_books(cls):
-        if (books := read_books_from_file()):
+        if books := read_books_from_file():
             return [Book(**data) for data in books]
-        return [] 
+        return []
+
 
     @classmethod
     def load_users(cls):
-        if (users := read_users_from_file()):
-            return [User(**data) for data in users]
-        return []
+        users_data = read_users_from_file()
+        if not users_data:
+            return []
+
+        users = []
+        for data in users_data:
+            borrowed_books = [Book(**book) for book in data.get('borrowed_books', [])]
+            data['borrowed_books'] = borrowed_books
+            users.append(User(**data))
+
+        return users
+
 
             
     def create_user(self)-> User:
@@ -49,3 +59,13 @@ class Manager:
         write_book_to_file(book)
 
 
+    def borrow_book(self,user_id ,book_id):
+        self.library.borrow_book(user_id,book_id)
+        update_book_data(self.library.books)
+        update_user_data(self.library.users)
+    
+
+    def return_book(self,user_id,book_id):
+        self.library.return_book(user_id,book_id)
+        update_book_data(self.library.books)
+        update_user_data(self.library.users)

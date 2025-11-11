@@ -40,10 +40,10 @@ def main():
             case '8':
                 user_id = get_id("enter user id:\n")
                 book_id = get_id("enter book id:\n")
-                manager.library.borrow_book(user_id,book_id)
+                manager.borrow_book(user_id,book_id)
             case '9':
-                user_id = get_id("enter uder id")
-                book_id = get_id("enter book id")
+                user_id = get_id("enter uder id:\n")
+                book_id = get_id("enter book id:\n")
                 manager.library.return_book(user_id,book_id)
             case '0':
                 break
