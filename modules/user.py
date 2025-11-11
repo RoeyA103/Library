@@ -1,5 +1,5 @@
 from modules.book import Book
-from io import file_maneger
+
 class User:
     id = 100
     def __init__(self, name:str, id:int=None , __borrowed_books:list=None):
@@ -11,7 +11,6 @@ class User:
         else:
             self.id = User.id
             User.id += 1
-        file_maneger.write_user_to_file(self)
 
     def __str__(self):
         return f"""name:{self.name}, id:{self.id}, borrowed books:{", ".join(book.title for book in self.__borrowed_books)}"""

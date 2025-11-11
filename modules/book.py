@@ -1,5 +1,5 @@
 import json
-from io import file_manager
+
 class Book:
     isbn = 200
     def __init__(self, title ,author,isbn=None,__is_available=True):
@@ -12,7 +12,7 @@ class Book:
         else:
             self.isbn  = Book.isbn
             Book.isbn += 1
-        file_manager.write_book_to_file(self)
+
         
     def __str__(self):
         return f" the name book is: {self.title} the author book is: {self.author} Serial number: {self.isbn}"
