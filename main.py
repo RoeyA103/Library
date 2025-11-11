@@ -44,7 +44,7 @@ def main():
             case '9':
                 user_id = get_id("enter uder id:\n")
                 book_id = get_id("enter book id:\n")
-                manager.library.return_book(user_id,book_id)
+                manager.return_book(user_id,book_id)
             case '0':
                 break
             case _:
